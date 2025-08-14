@@ -15,13 +15,12 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/facebook/folly'
   spec.summary = 'An open-source C++ library developed and used at Facebook.'
   spec.authors = 'Facebook'
-  spec.source = { :git => folly_git_url,
-                  :tag => "v#{folly_release_version}" }
+  spec.source = { :git => folly_git_url, :tag => "v#{folly_release_version}" }
   spec.module_name = 'folly'
   spec.header_mappings_dir = '.'
-  spec.dependency 'boost'
-  spec.dependency 'DoubleConversion'
-  spec.dependency 'glog'
+  spec.dependency 'boost', "1.84.0"
+  spec.dependency 'DoubleConversion', "1.1.6"
+  spec.dependency 'glog', "0.3.5"
   spec.dependency "fast_float", "6.1.4"
   spec.dependency "fmt", "11.0.2"
   spec.compiler_flags = folly_compiler_flags + ' -DFOLLY_HAVE_PTHREAD=1 -Wno-documentation -faligned-new'
