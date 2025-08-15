@@ -3,7 +3,7 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-folly_compiler_flags = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32"
+folly_compiler_flags = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1"
 folly_release_version = "2024.11.18.0"
 folly_git_url = "https://github.com/nqwlch/folly.git"
 
@@ -15,15 +15,16 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/facebook/folly'
   spec.summary = 'An open-source C++ library developed and used at Facebook.'
   spec.authors = 'Facebook'
-  spec.source = { :git => folly_git_url, :tag => "v#{folly_release_version}" }
+  spec.source = { :git => folly_git_url,
+                  :tag => "v#{folly_release_version}" }
   spec.module_name = 'folly'
   spec.header_mappings_dir = '.'
-  spec.dependency 'boost', "1.84.0"
-  spec.dependency 'DoubleConversion', "1.1.6"
-  spec.dependency 'glog', "0.3.5"
+  spec.dependency 'boost'
+  spec.dependency 'DoubleConversion'
+  spec.dependency 'glog'
   spec.dependency "fast_float", "6.1.4"
   spec.dependency "fmt", "11.0.2"
-  spec.compiler_flags = folly_compiler_flags + ' -DFOLLY_HAVE_PTHREAD=1 -Wno-documentation -faligned-new'
+  spec.compiler_flags = folly_compiler_flags + ' -DFOLLY_HAVE_PTHREAD=1 -faligned-new'
   spec.source_files = 'folly/String.cpp',
                       'folly/Conv.cpp',
                       'folly/Demangle.cpp',
@@ -68,7 +69,7 @@ Pod::Spec.new do |spec|
                       'folly/net/*.h',
                       'folly/net/detail/*.h',
                       'folly/portability/*.h',
-                      'folly/system/*.h'
+                      'folly/system/*.h',
 
   # workaround for https://github.com/facebook/react-native/issues/14326
   spec.preserve_paths = 'folly/*.h',
@@ -87,8 +88,7 @@ Pod::Spec.new do |spec|
                         'folly/net/*.h',
                         'folly/net/detail/*.h',
                         'folly/portability/*.h',
-                        'folly/system/*.h'
-
+                        'folly/system/*.h',
   spec.libraries           = "c++abi" # NOTE Apple-only: Keep c++abi here due to https://github.com/react-native-community/releases/issues/251
   spec.pod_target_xcconfig = { "USE_HEADERMAP" => "NO",
                                "DEFINES_MODULE" => "YES",
