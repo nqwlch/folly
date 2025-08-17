@@ -124,7 +124,7 @@ Pod::Spec.new do |spec|
 
     fabric.preserve_paths = 'folly/concurrency/CacheLocality.h',
                             'folly/synchronization/*.h',
-                            'folly/system/ThreadId.h',
+                            'folly/system/ThreadId.h'
 
   end
 
