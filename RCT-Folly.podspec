@@ -5,7 +5,7 @@
 
 folly_compiler_flags = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32"
 folly_release_version = "2024.11.18.0"
-folly_git_url = "https://github.com/nqwlch/folly.git"
+folly_git_url = "https://github.com/facebook/folly.git"
 
 Pod::Spec.new do |spec|
   spec.name = 'RCT-Folly'
@@ -128,7 +128,8 @@ Pod::Spec.new do |spec|
                             'folly/detail/Futex.h',
                             'folly/SharedMutex.h',
                             'folly/Likely.h',
-                            'folly/Hash.h'
+                            'folly/Hash.h',
+                            'folly/portability/Unistd.h'
 
   end
 
