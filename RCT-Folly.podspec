@@ -70,8 +70,6 @@ Pod::Spec.new do |spec|
                       'folly/net/detail/*.h',
                       'folly/portability/*.h',
                       'folly/system/*.h',
-                      'folly/synchronization/*.h',
-
 
   # workaround for https://github.com/facebook/react-native/issues/14326
   spec.preserve_paths = 'folly/*.h',
@@ -91,8 +89,6 @@ Pod::Spec.new do |spec|
                         'folly/net/detail/*.h',
                         'folly/portability/*.h',
                         'folly/system/*.h',
-                        'folly/synchronization/*.h',
-
   spec.libraries           = "c++abi" # NOTE Apple-only: Keep c++abi here due to https://github.com/react-native-community/releases/issues/251
   spec.pod_target_xcconfig = { "USE_HEADERMAP" => "NO",
                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++17",
@@ -125,9 +121,7 @@ Pod::Spec.new do |spec|
     fabric.preserve_paths = 'folly/concurrency/CacheLocality.h',
                             'folly/synchronization/*.h',
                             'folly/system/ThreadId.h'
-
   end
-
   # Folly has issues when compiled with iOS 10 set as deployment target
   # See https://github.com/facebook/folly/issues/1470 for details
   spec.platforms = { :ios => "15.1" }
