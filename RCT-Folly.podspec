@@ -117,10 +117,27 @@ Pod::Spec.new do |spec|
                           'folly/concurrency/CacheLocality.h',
                           'folly/synchronization/*.h',
                           'folly/system/ThreadId.h'
-
-    fabric.preserve_paths = 'folly/concurrency/CacheLocality.h',
+                            
+    fabric.preserve_paths = 'folly/*.h',
+                            'folly/algorithm/simd/*.h',
+                            'folly/algorithm/simd/detail/*.h',
+                            'folly/chrono/*.h',
+                            'folly/container/*.h',
+                            'folly/container/detail/*.h',
+                            'folly/detail/*.h',
+                            'folly/functional/*.h',
+                            'folly/hash/*.h',
+                            'folly/json/*.h',
+                            'folly/lang/*.h',
+                            'folly/memory/*.h',
+                            'folly/memory/detail/*.h',
+                            'folly/net/*.h',
+                            'folly/net/detail/*.h',
+                            'folly/portability/*.h',
+                            'folly/system/*.h',
                             'folly/synchronization/*.h',
-                            'folly/system/ThreadId.h'
+                            'folly/concurrency/CacheLocality.h'
+    
   end
   # Folly has issues when compiled with iOS 10 set as deployment target
   # See https://github.com/facebook/folly/issues/1470 for details
